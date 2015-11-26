@@ -1,0 +1,53 @@
+<!--div class="sidebar-header sidebar-header-custom">
+    <a href="mailto:info@SahRacingApp.in?Subject=Style%20Inquiry"><i class="fa fa-envelope"></i></a>
+    <a onclick="checkLogin()"><i class="fa fa-comment"></i></a>
+    <a ng-href="" onclick="shareViaWhatsapp()"><i class="fa fa-whatsapp"></i></a>
+    <a ng-href=""><i class="fa fa-times"></i></a>
+</div-->
+<div class="clear"></div>
+<!-- <div class="searchbar">
+    <input class="" type="text" value="Search..">
+    <button class="button button-blue">GO</button>
+</div> -->
+<!--div class="sidebar-divider">
+    SAH Racing
+</div-->
+<ul class="sidebar-navigation">
+    <li><a ng-href="#/home"><img src="icon.png" style="width:50px;height:50px;margin-top:10px;margin-bottom:10px"/></a></li>
+    <li><a ng-href="#/home"><i class="fa fa-home"></i>Home<i class="fa fa-circle"></i></a></li>	
+	<li class="has-submenu">
+        <a class="deploy-submenu" ng-href=""><i class="fa fa-globe"></i>Countries<i class="fa fa-plus"></i></a>
+        <ul class="submenu">
+			<li>
+				<a ng-href="#/home" class="active-menu">
+					<i class="fa fa-angle-right"></i> All
+					<i class="fa fa-circle"></i>
+				</a>
+            </li>
+            <li ng-repeat="cat in countries" on-finish-render="ngRepeatFinished">
+				<a ng-href="#/home?id={{cat.Countrytype.id}}" class="active-menu">
+					<i class="fa fa-angle-right"></i> {{cat.Countrytype.name}}
+					<i class="fa fa-circle"></i>
+				</a>
+            </li>
+        </ul>
+    </li>
+    <!--li><a href="#/static/2"><i class="fa fa-info"></i>Betting Info<i class="fa fa-circle"></i></a></li-->
+	<li><a href="#/home?keyword=preview"><i class="fa fa-file-text"></i>Race Previews<i class="fa fa-circle"></i></a></li>
+	<li><a href="#/static/3"><i class="fa fa-file-text"></i>Racing & Advertising<i class="fa fa-circle"></i></a></li>
+    <li><a href="#/static/5"><i class="fa fa-envelope"></i>Contact Us<i class="fa fa-circle"></i></a></li>
+	<li><a onclick="exitApp()"><i class="fa fa-sign-out"></i>Exit<i class="fa fa-circle"></i></a></li>
+</ul>
+
+			<div class="w100 mb10">                
+					<div ng-repeat="ads in adverts" ng-if="ads.Item.layout == 4" on-finish-render="ngRepeatFinished">
+						<a ng-click="openAdsLink('{{ads.Item.url}}')">
+							<img ng-src="{{advertimagepath}}{{ads.Item.image}}" class="img-wrapper-product" alt="{{ads.Item.image}}">
+						</a>
+					</div>
+			</div>
+
+
+<div class="sidebar-divider">
+    Copyright 2015 SAHorseracing.
+</div>

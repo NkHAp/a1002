@@ -1,0 +1,35 @@
+<div id="content" class="snap-content">
+    <div class="content">
+        <div class="adaptive-style">
+            <h4>Latest News</h4>
+        </div>
+        <div class="clear"></div>
+		<div class="">
+			<div class="  no-bottom">
+				<!-- Page Columns-->
+				<div class="one-half-responsive">                
+					<div ng-repeat="ads in adverts" ng-if="ads.Item.layout == 5" on-finish-render="ngRepeatFinished">
+					<a ng-click="openAdsLink('{{ads.Item.url}}')">
+						<img ng-src="{{advertimagepath}}{{ads.Item.image}}" class="w100 mb10" alt="{{ads.Item.image}}">
+                    </a>
+					</div>
+				</div>
+			</div>          
+		</div>
+		<div class="clear"></div>	
+        <div class="portfolio-adaptive adaptive-one listing">
+            <div class="adaptive-item" ng-repeat="product in products"  ng-if="product.Item.title !== NaN"  on-finish-render="ngRepeatFinished"> 
+				<h4 class="pname">
+                    <a ng-click="openNewsLink({{product.Item.id}})" class="lname">{{product.Item.title}}</a>					
+				</h4>
+				<div class="img-wrapper-product">
+                    <a ng-click="openNewsLink({{product.Item.id}})" title="{{product.Item.title}}">
+                        <img class="responsive-image" ng-src="{{product.Item.image != '' ? domain+product.Item.image : '' }}" alt="{{product.Item.title}}">
+                    </a>
+					<button ng-click="share($event, product)" class="button add-cart-btn  custom-add-cart">Share</button>
+                </div>
+                <p class="sdetail">{{product.Item.text}}</p>	
+            </div>
+        </div>
+    </div>
+</div>
